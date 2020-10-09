@@ -90,5 +90,8 @@
   "color-basic-transparent-300": "rgba(128, 128, 128, 0.24)",
   "color-basic-transparent-400": "rgba(128, 128, 128, 0.32)",
   "color-basic-transparent-500": "rgba(128, 128, 128, 0.4)",
-  "color-basic-transparent-600": "rgba(128, 128, 128, 0.48)"
+  "color-basic-transparent-600": "rgba(128, 128, 128, 0.48)",
+  "color-basic-transparent-700": "rgba(128, 128, 128, 0.56)",
+  "color-basic-transparent-800": "rgba(128, 128, 128, 0.64)",
+  "color-basic-transparent-900": "rgba(128, 128, 128, 0.72)"
 }
