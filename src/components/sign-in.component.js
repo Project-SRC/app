@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, ImageBackground} from 'react-native';
-import {Button, Input, Text, Icon} from '@ui-kitten/components';
+import {Button, Modal, Input, Text, Icon, Spinner} from '@ui-kitten/components';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const EyeIcon = (props) => <Icon {...props} name="eye" />;
@@ -19,9 +19,14 @@ export const SignInScreen = ({navigation}) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [passwordVisible, setPasswordVisible] = React.useState(false);
+  const [visible, setVisible] = React.useState(false);
 
   const onSignInButtonPress = () => {
-    navigation && navigation.goBack();
+    setVisible(true)
+    setTimeout(() => {
+      setVisible(false);
+      navigation && navigation.navigate('Home');
+    }, 1000);
   };
 
   const onSignUpButtonPress = () => {
@@ -38,9 +43,12 @@ export const SignInScreen = ({navigation}) => {
 
   return (
     <KeyboardAwareScrollView
-      resetScrollToCoords={{ x: 0, y: 0 }}
+      resetScrollToCoords={{x: 0, y: 0}}
       contentContainerStyle={styles.container}
       scrollEnabled={false}>
+      <Modal visible={visible} backdropStyle={styles.backdrop}>
+        <Spinner size="giant" />
+      </Modal>
       <ImageBackground
         style={styles.container}
         source={require('../assets/images/image-background-1.jpg')}>
@@ -54,6 +62,7 @@ export const SignInScreen = ({navigation}) => {
         </View>
         <View style={styles.formContainer}>
           <Input
+            style={styles.shadowInput}
             status="control"
             placeholder="Email"
             accessoryRight={PersonIcon}
@@ -147,8 +156,12 @@ const styles = StyleSheet.create({
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
   },
+  shadowInput: {
+    backgroundColor: 'rgba(128, 128, 128, 0.45)',
+  },
   passwordInput: {
     marginTop: 16,
+    backgroundColor: 'rgba(128, 128, 128, 0.45)',
   },
   signInButton: {
     marginHorizontal: 16,
@@ -182,5 +195,8 @@ const styles = StyleSheet.create({
     textShadowColor: '#222222',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
+  },
+  backdrop: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
 });

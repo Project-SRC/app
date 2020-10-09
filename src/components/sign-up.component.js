@@ -51,7 +51,7 @@ export const SignUpScreen = ({navigation}) => {
   };
 
   const renderPhotoButton = () => (
-    <Button style={styles.editAvatarButton} size="small" icon={PlusIcon} />
+    <Button style={styles.editAvatarButton} size="small" accessoryRight={PlusIcon} />
   );
 
   return (
@@ -65,7 +65,6 @@ export const SignUpScreen = ({navigation}) => {
         <View style={styles.headerContainer}>
           <ProfileAvatar
             style={styles.profileAvatar}
-            resizeMode="center"
             source={require('../assets/images/image-person.png')}
             editButton={renderPhotoButton}
           />
@@ -77,6 +76,7 @@ export const SignUpScreen = ({navigation}) => {
         </View>
         <View style={styles.formContainer}>
           <Input
+            style={styles.shadowInput}
             status="control"
             autoCapitalize="none"
             placeholder="User Name"
@@ -105,6 +105,7 @@ export const SignUpScreen = ({navigation}) => {
             onIconPress={onPasswordIconPress}
           />
           <CheckBox
+            status="control"
             style={styles.termsCheckBox}
             textStyle={styles.termsCheckBoxText}
             children="I read and agree to Terms &amp; Conditions"
@@ -188,6 +189,10 @@ const themedStyles = StyleService.create({
   },
   formInput: {
     marginTop: 16,
+    backgroundColor: 'color-basic-transparent-600',
+  },
+  shadowInput: {
+    backgroundColor: 'color-basic-transparent-600'
   },
   termsCheckBox: {
     marginTop: 24,

@@ -1,8 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {
-  Avatar,
-} from '@ui-kitten/components';
+import {Avatar} from '@ui-kitten/components';
 
 export const ProfileAvatar = (props) => {
   const renderEditButtonElement = () => {
@@ -26,6 +24,10 @@ export const ProfileAvatar = (props) => {
 const styles = StyleSheet.create({
   avatar: {
     alignSelf: 'center',
+    resizeMode: 'center',
+    height: 46,
+    width: 46,
+    marginTop: 23,
   },
   editButton: {
     position: 'absolute',
