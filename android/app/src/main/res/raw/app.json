@@ -1,0 +1,26 @@
+{
+  "name": "projectSRC",
+  "displayName": "Project SRC",
+  "android": {
+    "package": "com.sconetto.projectSRC",
+    "versionCode": 3
+  },
+  "privacy": "public",
+  "platforms": ["ios", "android"],
+  "orientation": "portrait",
+  "userInterfaceStyle": "automatic",
+  "icon": "./src/assets/images/image-app-icon.png",
+  "splash": {
+    "image": "src/assets/images/image-splash.png",
+    "resizeMode": "contain"
+  },
+  "assetBundlePatterns": [
+    "src/assets/images/*",
+    "src/assets/fonts",
+    "src/layouts/**/assets/*"
+  ],
+  "androidStatusBar": {
+    "barStyle": "dark-content",
+    "backgroundColor": "#FF4444"
+  }
+}
